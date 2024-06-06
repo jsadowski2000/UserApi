@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using UserApi.DTOs;
+using UserApi.Dtos;
 using UserApi.Services;
 using System.Security.Claims;
 

@@ -1,6 +1,6 @@
 
 
-using UserApi.DTOs;
+using UserApi.Dtos;
 
 namespace UserApi.Services
 {
