@@ -14,4 +14,14 @@ public class UserCreateDto
         [EmailAddress(ErrorMessage = "Podany adres email nie jest poprawny.")]
         public string? Email { get; set; }
 }
+public class UpdatePasswordDto
+    {
+
+        [Required]
+        public string? oldPassword { get; set; }
+
+        [Required]
+        public string? newPassword { get; set; }
+
+    }
 }

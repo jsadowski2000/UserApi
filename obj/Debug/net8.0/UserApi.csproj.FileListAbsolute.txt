@@ -211,3 +211,12 @@ C:/Users/jco/Desktop/projekty/userapi/obj/Debug/net8.0/ref/UserApi.dll
 /Users/sados/Desktop/projects/UserApi/obj/Debug/net8.0/UserApi.pdb
 /Users/sados/Desktop/projects/UserApi/obj/Debug/net8.0/UserApi.genruntimeconfig.cache
 /Users/sados/Desktop/projects/UserApi/obj/Debug/net8.0/ref/UserApi.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/sados/Desktop/projects/UserApi/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
