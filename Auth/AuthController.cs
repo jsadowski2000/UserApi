@@ -24,7 +24,7 @@ public class AuthController : ControllerBase
             return BadRequest("Invalid client request");
         }
 
-        var token = await _authService.Authenticate(userLoginDto);
+        var token = await _authService.Login(userLoginDto);
 
         if (token == null)
         {

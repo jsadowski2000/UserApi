@@ -20,7 +20,7 @@ public class AuthService : IAuthService
         _configuration = configuration;
     }
 
-    public async Task<string> Authenticate(UserLoginDto userLoginDto)
+    public async Task<string> Login(UserLoginDto userLoginDto)
     {
         var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == userLoginDto.Email);
 
@@ -30,7 +30,17 @@ public class AuthService : IAuthService
         }
 
         var token = GenerateJWTToken(user);
+        await SaveToken(token, user);
         return token;
+    }
+
+    private async Task SaveToken(string jwtToken, User user)
+    {
+        user.ConfirmationToken = jwtToken;
+        user.ConfirmationTokenDate = DateTime.UtcNow;
+
+        _context.Users.Update(user);
+        await _context.SaveChangesAsync();
     }
 
     private string GenerateJWTToken(User user)
@@ -38,9 +48,9 @@ public class AuthService : IAuthService
         var secretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
 
         var claims = new List<Claim> {
-        new Claim("ID", user.Id.ToString()),
-        new Claim("Username", user.UserName),
-        new Claim("Role", user.Role.ToString()),
+        new Claim("ID:", user.Id.ToString()),
+        new Claim("Username:", user.UserName),
+        new Claim("Role:", user.Role.ToString()),
     };
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
@@ -51,7 +61,11 @@ public class AuthService : IAuthService
             expires: DateTime.UtcNow.AddDays(30),
             signingCredentials: creds
             );
+
+        
             
         return new JwtSecurityTokenHandler().WriteToken(jwtToken);
     }
+
+    
 }

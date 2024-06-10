@@ -4,6 +4,6 @@ namespace UserApi.Interface{
 
 public interface IAuthService
 {
-    Task<string> Authenticate(UserLoginDto userLoginDto);
+    Task<string> Login(UserLoginDto userLoginDto);
 }
 }
