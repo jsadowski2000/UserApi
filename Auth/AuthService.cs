@@ -38,9 +38,9 @@ public class AuthService : IAuthService
         var secretKey = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
 
         var claims = new List<Claim> {
-        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-        new Claim(ClaimTypes.UserData, user.UserName),
-        new Claim("password", user.Password),
+        new Claim("ID", user.Id.ToString()),
+        new Claim("Username", user.UserName),
+        new Claim("Role", user.Role.ToString()),
     };
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
